@@ -30,10 +30,14 @@ with open(arq_template, encoding='utf-8') as tmp:
 
 with open(arq_nomes, encoding='utf-8') as nomes:
     for nome in nomes:
-        nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
+        if len(nome) < 2:
+            # Ignora linhas em branco
+            pass
+        else:
+            nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
 
-        with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
-            arqSVG.write( template.format(nome.replace('\n', '')) )
+            with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
+                arqSVG.write( template.format(nome.replace('\n', '')) )
 
-        call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
+            call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
 
