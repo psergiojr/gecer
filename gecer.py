@@ -30,8 +30,8 @@ with open(arq_template, encoding='utf-8') as tmp:
 
 with open(arq_nomes, encoding='utf-8') as nomes:
     for nome in nomes:
-        if len(nome) < 2:
-            # Ignora linhas em branco
+        # Ignora linhas de separação ou em branco
+        if nome.startswith('-') or len(nome) < 2:
             pass
         else:
             nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
