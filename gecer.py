@@ -44,7 +44,10 @@ with open(arq_nomes, encoding='utf-8') as nomes:
             nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
 
             with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
-                arqSVG.write( template.format_map( campos ) )
+                try:
+                    arqSVG.write( template.format_map( campos ) )
+                except ValueError:
+                    print('[ERRO] Os campos do template não correspondem aos campos do arquivo "nomes.txt". Há algum campo faltando?')
 
             call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
 
