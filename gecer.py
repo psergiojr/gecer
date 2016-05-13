@@ -18,6 +18,8 @@
 
 from subprocess import call
 
+campos = {}
+
 # Endereço do arquivo de nomes:
 arq_nomes = 'nomes.txt'
 # Endereço do template SVG:
@@ -33,11 +35,16 @@ with open(arq_nomes, encoding='utf-8') as nomes:
         # Ignora linhas de separação ou em branco
         if nome.startswith('-') or len(nome) < 2:
             pass
+        # Extrai os campos e respectivos valores
+        elif ':' in nome:
+            campos[ nome.split(': ')[0].lower() ] = nome.split(': ')[1].replace('\n', '')
+        # Gera um novo arquivo a partir do template para cada nome
         else:
+            campos['nome'] = nome.replace('\n', '')
             nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
 
             with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
-                arqSVG.write( template.format(nome.replace('\n', '')) )
+                arqSVG.write( template.format_map( campos ) )
 
             call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
 
