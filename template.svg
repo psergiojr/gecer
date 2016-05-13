@@ -14,8 +14,8 @@
    viewBox="0 0 1052.3622 744.09448"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="teste0.svg">
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="template.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -31,10 +31,10 @@
      inkscape:document-units="cm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
@@ -69,7 +69,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -81,7 +81,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot3359"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;line-height:125%;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-size:27.5px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Gothic;-inkscape-font-specification:URW Gothic"
        transform="translate(0,308.26772)"><flowRegion
          id="flowRegion3361"><rect
            id="rect3363"
@@ -89,20 +89,18 @@
            height="311.24869"
            x="159.44882"
            y="212.59842"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic';text-align:center;text-anchor:middle" /></flowRegion><flowPara
+           style="font-size:27.5px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;font-family:URW Gothic;-inkscape-font-specification:URW Gothic" /></flowRegion><flowPara
          id="flowPara3365">Declaramos que <flowSpan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32.5px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue'"
-   id="flowSpan3367">{0}</flowSpan> concluiu o curso de <flowSpan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic'"
-   id="flowSpan3369">Informática Básica</flowSpan> oferecido pela Secretaria Municipal de Ciência, Tecnologia e Inovação (SEMCT&amp;I) por meio do <flowSpan
-   style="-inkscape-font-specification:'Comic Neue Bold';font-family:'Comic Neue';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:32.5px"
-   id="flowSpan3364">Telecentro Comunitário Casa Brasil</flowSpan>, no período de <flowSpan
-   style="font-weight:bold;-inkscape-font-specification:'Comic Neue Bold';font-family:'Comic Neue';font-style:normal;font-stretch:normal;font-variant:normal;font-size:32.5px"
-   id="flowSpan3370">XX/XX/20XX</flowSpan> a <flowSpan
-   style="font-weight:bold;-inkscape-font-specification:'Comic Neue Bold';font-family:'Comic Neue';font-style:normal;font-stretch:normal;font-variant:normal;font-size:32.5px"
-   id="flowSpan3376">XX/XX/20XX</flowSpan> com carga horária de <flowSpan
-   style="font-weight:bold;-inkscape-font-specification:'Comic Neue Bold';font-family:'Comic Neue';font-style:normal;font-stretch:normal;font-variant:normal;font-size:32.5px"
-   id="flowSpan3382">30h</flowSpan>.</flowPara></flowRoot>    <path
+   style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comic Neue;-inkscape-font-specification:Comic Neue"
+   id="flowSpan3367">{nome}</flowSpan> concluiu o curso de {curso} oferecido pela Secretaria Municipal de Ciência, Tecnologia e Inovação (SEMCT&amp;I) por meio do <flowSpan
+   style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comic Neue;-inkscape-font-specification:Comic Neue Bold"
+   id="flowSpan3364">Telecentro Comunitário {telecentro}</flowSpan>, no período de <flowSpan
+   style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comic Neue;-inkscape-font-specification:Comic Neue Bold"
+   id="flowSpan3370">{início}</flowSpan> a <flowSpan
+   style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comic Neue;-inkscape-font-specification:Comic Neue Bold"
+   id="flowSpan3376">{fim}</flowSpan> com carga horária de <flowSpan
+   style="font-size:32.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Comic Neue;-inkscape-font-specification:Comic Neue Bold"
+   id="flowSpan3382">{carga horária}</flowSpan>.</flowPara></flowRoot>    <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 496.06299,991.62599 318.89764,0"
        id="path3373"

@@ -46,8 +46,8 @@ with open(arq_nomes, encoding='utf-8') as nomes:
             with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
                 try:
                     arqSVG.write( template.format_map( campos ) )
+                    call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
                 except ValueError:
                     print('[ERRO] Os campos do template não correspondem aos campos do arquivo "nomes.txt". Há algum campo faltando?')
-
-            call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
-
+                except FileNotFoundError:
+                    print('[ERRO] O programa "' + inkscape_path + '" não foi encontrado para gerar os arquivos PDF. O caminho está certo e acessível?')
