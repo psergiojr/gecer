@@ -18,6 +18,8 @@
 
 from subprocess import call
 
+campos = {}
+
 # Endereço do arquivo de nomes:
 arq_nomes = 'nomes.txt'
 # Endereço do template SVG:
@@ -30,14 +32,25 @@ with open(arq_template, encoding='utf-8') as tmp:
 
 with open(arq_nomes, encoding='utf-8') as nomes:
     for nome in nomes:
-        if len(nome) < 2:
-            # Ignora linhas em branco
+        # Ignora linhas de separação ou em branco
+        if nome.startswith('-') or len(nome) < 2:
             pass
+        # Extrai os campos e respectivos valores
+        elif ':' in nome:
+            campos[ nome.split(': ')[0].lower() ] = nome.split(': ')[1].replace('\n', '')
+        # Gera um novo arquivo a partir do template para cada nome
         else:
+            campos['nome'] = nome.replace('\n', '')
             nomearq = 'certif_' + nome.replace('\n', '') + '.svg'
 
             with open(nomearq, mode='w', encoding='utf-8') as arqSVG:
-                arqSVG.write( template.format(nome.replace('\n', '')) )
+                try:
+                    arqSVG.write( template.format_map( campos ) )
+                except ValueError:
+                    print('[ERRO] Os campos do template não correspondem aos campos do arquivo "nomes.txt". Há algum campo faltando?')
 
-            call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
-
+            # Chama o Inkscape para gerar os arquivos pdf
+            try:
+                call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
+            except FileNotFoundError:
+                print('[ERRO] O programa "' + inkscape_path + '" não foi encontrado para gerar os arquivos PDF. O caminho está certo e acessível?')
