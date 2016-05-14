@@ -37,7 +37,7 @@ with open(arq_template, encoding='utf-8') as tmp:
     template = tmp.read()
 
 # Lendo o arquivo de nomes
-with open(arq_nomes, encoding='utf-8') as nomes:
+with open(arq_nomes) as nomes:
     for nome in nomes:
         # Ignora linhas de separação ou em branco
         if nome.startswith('-') or len(nome) < 2:
