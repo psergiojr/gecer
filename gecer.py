@@ -17,6 +17,7 @@
 # limitations under the License.
 
 from subprocess import call
+import sys
 
 campos = {}
 
@@ -24,6 +25,12 @@ campos = {}
 arq_nomes = 'nomes.txt'
 # Endereço do template SVG:
 arq_template = 'template.svg'
+# Endereço do Inkscape (Windows):
+if sys.platform == 'win':
+    inkscape_path = 'C:\Arquivos de programas\Inkscape\inkscape.exe'
+# ...(Unix)
+else:
+    inkscape_path = 'inkscape'
 
 # Lendo o arquivo de template
 with open(arq_template, encoding='utf-8') as tmp:
@@ -51,6 +58,6 @@ with open(arq_nomes, encoding='utf-8') as nomes:
 
             # Chama o Inkscape para gerar os arquivos pdf
             try:
-                call(['inkscape', '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
+                call([inkscape_path, '-f', nomearq, '-A', nomearq.replace('.svg', '.pdf')])
             except FileNotFoundError:
                 print('[ERRO] O programa "' + inkscape_path + '" não foi encontrado para gerar os arquivos PDF. O caminho está certo e acessível?')
