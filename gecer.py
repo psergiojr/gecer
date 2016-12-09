@@ -44,7 +44,8 @@ with open(arq_nomes) as nomes:
             pass
         # Extrai os campos e respectivos valores
         elif ':' in nome:
-            campos[ nome.split(': ')[0].lower() ] = nome.split(': ')[1].replace('\n', '')
+            campo, valor = nome.split(': ')
+            campos[ campo.lower() ] = valor.replace('\n', '')
         # Gera um novo arquivo a partir do template para cada nome
         else:
             campos['nome'] = nome.replace('\n', '')
